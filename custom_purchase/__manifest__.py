@@ -8,7 +8,6 @@
     'depends': ['purchase'],
     'data': [
         'views/purchase_order_view.xml',
-        'views/purchase_view.xml',
     ],
     'installable': True,
     'application': True,
