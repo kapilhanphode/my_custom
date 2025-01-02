@@ -6,8 +6,9 @@
     'category': 'Purchase',
     'license': 'LGPL-3',
     'depends': ['purchase'],
-    'data': [    
+    'data': [
         'views/purchase_order_view.xml',
+        'views/purchase_view.xml',
     ],
     'installable': True,
     'application': True,

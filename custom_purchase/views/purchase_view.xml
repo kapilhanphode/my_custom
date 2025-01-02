@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="purchase_order_view_tree_inherit" model="ir.ui.view">
+            <field name="name">purchase.order.view.tree.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header/button[@name='action_create_invoice']" position="after">
+                    <button name="purchase_list_view_button"
+                        class="btn btn-secondary mx-1"
+                        string="Custom Button I"
+                        type="object"/>
+                </xpath>
+                <header>
+                    <button name="purchase_list_view_button"
+                        class="btn btn-secondary mx-1"
+                        string="Custom Button II"
+                        type="object"/>
+                </header>
+            </field>
+        </record>
+    </data>
+</odoo>
