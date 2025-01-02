@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="Custom.ListView.Buttons" t-inherit="web.ListView.Buttons" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('o_list_buttons')]" position="inside">
+<!--            <t t-if="nbSelected">-->
+                <button type="button" class="btn btn-primary" t-on-click="onCustomReturnAction">
+                    Custom I
+                </button>
+                <button type="button" class="btn btn-primary" t-on-click="onCustomReturnFunction">
+                    Custom II
+                </button>
+
+<!--            </t>-->
+        </xpath>
+    </t>
+</templates>
