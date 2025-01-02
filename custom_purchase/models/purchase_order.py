@@ -3,7 +3,7 @@
 
 from odoo import models, fields, api, _
 
-class InheritPurchase(models.Model):
+class InheritPurchaseOrder(models.Model):
     _inherit = 'purchase.order'
     _description = 'Inherit Purchase Order'
 
