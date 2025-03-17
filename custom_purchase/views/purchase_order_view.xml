@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+
+        <record id="view_purchase_order_tree_inherited" model="ir.ui.view">
+            <field name="name">purchase.order.tree.inherited</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree[@class='o_purchase_order']" position="attributes">
+                    <attribute name="decoration-danger">state == 'cancel'</attribute>
+                    <attribute name="decoration-success">state == 'purchase'</attribute>
+                </xpath>
+                 <xpath expr="//tree/field[@name='state']" position="attributes">
+                    <attribute name="decoration-danger">state == 'cancel'</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="view_purchase_order_filter_inherit" model="ir.ui.view">
+            <field name="name">request.quotation.select</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.view_purchase_order_filter"/>
+            <field name="arch" type="xml">
+                <search string="Search Purchase Order">
+                    <filter name="cancel_rfqs" string="Cancel RFQs" domain="[('state', '=', 'cancel')]"/>
+                </search>
+            </field>
+        </record>
+
+
         <record id="purchase_order_view_tree_inherit" model="ir.ui.view">
             <field name="name">purchase.order.view.tree.inherit</field>
             <field name="model">purchase.order</field>
@@ -8,17 +37,35 @@
             <field name="arch" type="xml">
                 <xpath expr="//header/button[@name='action_create_invoice']" position="after">
                     <button name="purchase_list_view_button"
-                        class="btn btn-secondary mx-1"
-                        string="Custom Button I"
-                        type="object"/>
+                            class="btn btn-secondary mx-1"
+                            string="Custom Button I"
+                            type="object"/>
                 </xpath>
                 <header>
                     <button name="purchase_list_view_button"
-                        class="btn btn-secondary mx-1"
-                        string="Custom Button II"
-                        type="object"/>
+                            class="btn btn-secondary mx-1"
+                            string="Custom Button II"
+                            type="object"/>
                 </header>
             </field>
         </record>
+
+        <record id="purchase_order_form_inherit" model="ir.ui.view">
+            <field name="name">purchase.order.view.form.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='currency_id']" position="after">
+                    <field name="login_user_manager"/>
+                    <field name="is_manager"/>
+                </xpath>
+
+                <xpath expr="//header/button[1]" position="before">
+                    <button class="btn btn-primary" name="open_sign_document_wizard" string="Sign" type="object"/>
+                </xpath>
+            </field>
+        </record>
+
+
     </data>
 </odoo>

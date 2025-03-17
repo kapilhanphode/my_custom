@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="PurchaseDashboardInherit" t-inherit="purchase.PurchaseDashboard" t-inherit-mode="extension">
+
+        <xpath expr="//div[@class='g-col-4 p-0'][@filter_name='draft_rfqs']" position="attributes">
+            <attribute name="class">g-col-3 p-0</attribute>
+        </xpath>
+        <xpath expr="//div[@class='g-col-3 p-0'][@filter_name='draft_rfqs']/a" position="attributes">
+            <attribute name="class">btn btn-info w-100 h-100 border-0 rounded-0 text-capitalize text-break fw-normal</attribute>
+        </xpath>
+
+        <xpath expr="//div[@class='g-col-4 p-0'][@filter_name='waiting_rfqs']" position="attributes">
+            <attribute name="class">g-col-3 p-0</attribute>
+        </xpath>
+        <xpath expr="//div[@class='g-col-3 p-0'][@filter_name='waiting_rfqs']/a" position="attributes">
+            <attribute name="class">btn btn-secondary w-100 h-100 border-0 rounded-0 text-capitalize text-break fw-normal</attribute>
+        </xpath>
+
+
+        <xpath expr="//div[@class='g-col-4 p-0'][@filter_name='late_rfqs']" position="attributes">
+            <attribute name="class">g-col-3 p-0</attribute>
+        </xpath>
+        <xpath expr="//div[@class='g-col-3 p-0'][@filter_name='late_rfqs']/a" position="attributes">
+            <attribute name="class">btn btn-warning w-100 h-100 border-0 rounded-0 text-capitalize text-break fw-normal</attribute>
+        </xpath>
+
+        <xpath expr="//div[@class='g-col-4 p-0'][@filter_name='draft_rfqs,my_purchases']" position="attributes">
+            <attribute name="class">g-col-3 p-0</attribute>
+        </xpath>
+        <xpath expr="//div[@class='g-col-3 p-0'][@filter_name='draft_rfqs,my_purchases']/a" position="attributes">
+            <attribute name="class">btn btn-light d-flex align-items-center w-100 h-100 p-0 border border-info bg-100 fw-normal</attribute>
+        </xpath>
+
+
+        <xpath expr="//div[@class='g-col-4 p-0'][@filter_name='waiting_rfqs,my_purchases']" position="attributes">
+            <attribute name="class">g-col-3 p-0</attribute>
+        </xpath>
+        <xpath expr="//div[@class='g-col-3 p-0'][@filter_name='waiting_rfqs,my_purchases']/a" position="attributes">
+            <attribute name="class">btn btn-light d-flex align-items-center w-100 h-100 p-0 border border-secondary bg-100 fw-normal</attribute>
+        </xpath>
+
+
+        <xpath expr="//div[@class='g-col-4 p-0'][@filter_name='late_rfqs,my_purchases']" position="attributes">
+            <attribute name="class">g-col-3 p-0</attribute>
+        </xpath>
+        <xpath expr="//div[@class='g-col-3 p-0'][@filter_name='late_rfqs,my_purchases']/a" position="attributes">
+            <attribute name="class">btn btn-light d-flex align-items-center w-100 h-100 p-0 border border-warning bg-100 fw-normal</attribute>
+        </xpath>
+
+
+
+        <xpath expr="//div[@class='g-col-3 p-0'][3]" position="after">
+            <div class="g-col-3 p-0" t-on-click="setSearchContext" title="All Cancel RFQs" filter_name="cancel_rfqs">
+                <a href="#" class="btn btn-danger w-100 h-100 border-0 rounded-0 text-capitalize text-break fw-normal">
+                    <div class="fs-2" t-out="purchaseData['all_cancel']"/>Cancel
+                </a>
+            </div>
+        </xpath>
+
+        <xpath expr="//div[@class='g-col-3 p-0'][@filter_name='late_rfqs,my_purchases']" position="after">
+            <div class="g-col-3 p-0" t-on-click="setSearchContext" title="My Cancel RFQs" filter_name="cancel_rfqs,my_purchases">
+                <a href="#" class="btn btn-light d-flex align-items-center w-100 h-100 p-0 border border-danger bg-100 fw-normal">
+                    <div class="w-100 p-2" t-out="purchaseData['my_cancel']"/>
+                </a>
+            </div>
+        </xpath>
+    </t>
+</templates>

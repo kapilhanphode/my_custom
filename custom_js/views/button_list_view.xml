@@ -8,5 +8,5 @@
                 <attribute name="js_class">list_view_button</attribute>
             </xpath>
         </field>
-    </record>
+    </record>z
 </odoo>
