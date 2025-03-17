@@ -3,7 +3,7 @@
     # Module Information
     # =========================
     'name': "Custom Purchase - Kapil",
-    'version': '17.0.1.0.0',
+    'version': '17.0.1.0.1',
     'category': 'Purchase Module Customization',
     'summary': 'Enhancements to the base Odoo Purchase module, including signing and improved UI.',
     'description': """
