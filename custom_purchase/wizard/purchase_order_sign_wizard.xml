@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="purchase_order_sign_wizard_view" model="ir.ui.view">
+            <field name="name">purchase.order.sign.wizard</field>
+            <field name="model">purchase.order.sign.wizard</field>
+            <field name="arch" type="xml">
+                <form string="SIGN">
+                    <group>
+                        <group>
+                            <field name="report_id"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Sign Now" name="action_sign_report" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
